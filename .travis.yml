@@ -7,5 +7,5 @@ install:
  - wget https://sourceforge.net/projects/ev3.lejos.p/files/0.9.1-beta/leJOS_EV3_0.9.1-beta.tar.gz/download
  - tar xvf download
  - mvn install:install-file -Dfile=leJOS_EV3_0.9.1-beta/lib/ev3/ev3classes.jar -DgroupId=ev3.classes -DartifactId=ev3classes -Dversion=0.9.1 -Dpackaging=jar
- - mvn install:install-file -Dfile=leJOS_EV3_0.9.1-beta/lib/ev3/dbusjava.jar -DgrouoId=ev3.dbus -DartifactId=dbusjava -Dversion=0.9.1 -Dpackaging=jar
+ - mvn install:install-file -Dfile=leJOS_EV3_0.9.1-beta/lib/ev3/dbusjava.jar -DgroupId=ev3.dbus -DartifactId=dbusjava -Dversion=0.9.1 -Dpackaging=jar
 
