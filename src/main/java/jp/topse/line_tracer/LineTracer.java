@@ -27,12 +27,18 @@ public class LineTracer {
 	 * @param args
 	 */
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		LightSensorImpl light =  new LightSensorImpl(SensorPort.S2);
 		WheelImpl rightWheel = new WheelImpl(MotorPort.B);
 		WheelImpl leftWheel = new WheelImpl(MotorPort.C);
 		DirectionControllerImpl direction = new DirectionControllerImpl(rightWheel, leftWheel);
 		ControllerOnOff controller = new ControllerOnOff(light, direction);
+
+		Key enter   = ((EV3)BrickFinder.getLocal()).getKey("Enter");
+		LCD.drawString("Push Start.", 0, 2);
+		while(enter.isUp()) {
+			Delay.msDelay(100);
+		}
+		LCD.drawString("           ", 0, 2);
 
 		/// ネットワーク・リモート制御スレッドの起動
 		RemoteController remoteController = new RemoteController(direction);
@@ -45,19 +51,12 @@ public class LineTracer {
 		threadProvider.start();
 
 		/// ライントレーサの起動
-		trace(light, controller, direction);
+		trace(light, controller, direction, enter);
 	}
 	
-	public static void trace(LightSensor light, Controller controller, DirectionController direction) {
-		Key enter   = ((EV3)BrickFinder.getLocal()).getKey("Enter");
-		
+	public static void trace(LightSensor light, Controller controller, 
+			DirectionController direction, Key enter) {		
 		light.setThreashold(0.15F);
-		
-		LCD.drawString("Push Start.", 0, 2);
-		while(enter.isUp()) {
-			Delay.msDelay(100);
-		}
-		LCD.drawString("           ", 0, 2);
 		
 		for(int i = 0; i < 1200; i++) {
 			Delay.msDelay(100);
