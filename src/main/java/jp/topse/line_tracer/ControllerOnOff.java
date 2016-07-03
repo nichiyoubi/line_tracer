@@ -16,8 +16,8 @@ public class ControllerOnOff extends Controller {
 
 	/**
 	 * 
-	 * @param light
-	 * @param direction
+	 * @param light	光センサーオブジェクト
+	 * @param direction	方向制御オブジェクト
 	 */
 	public ControllerOnOff(LightSensor light, DirectionController direction) {
 		light_ = light;

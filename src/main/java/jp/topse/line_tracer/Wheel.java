@@ -24,7 +24,7 @@ public interface Wheel {
 	
 	/**
 	 * 速度を設定します。
-	 * @param int 速度（0-100%)
+	 * @param power	速度（0-100%)
 	 */
 	void setSpeed(int power);
 	

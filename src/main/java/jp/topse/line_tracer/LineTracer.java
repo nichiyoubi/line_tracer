@@ -24,7 +24,7 @@ import jp.topse.line_tracer.WheelImpl;
 public class LineTracer {
 
 	/**
-	 * @param args
+	 * @param args	引数（本プログラムでは使用しない）
 	 */
 	public static void main(String[] args) {
 		LightSensorImpl light =  new LightSensorImpl(SensorPort.S2);
