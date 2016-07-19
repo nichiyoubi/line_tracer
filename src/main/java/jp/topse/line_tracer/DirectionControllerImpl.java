@@ -17,8 +17,8 @@ public class DirectionControllerImpl extends DirectionController {
 
 	/**
 	 * コンストラクタ
-	 * @param right
-	 * @param left
+	 * @param right	右車輪（モーター）
+	 * @param left	左車輪（モーター）
 	 */
 	public DirectionControllerImpl(Wheel right, Wheel left) {
 		rightWheel_ = right;

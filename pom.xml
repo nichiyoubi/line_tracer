@@ -47,6 +47,30 @@
             <target>1.7</target>
           </configuration>
         </plugin>
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <configuration>
+             <author>true</author>
+             <source>1.7</source>
+             <encoding>UTF-8</encoding>
+             <charset>UTF-8</charset>
+             <docencoding>UTF-8</docencoding>
+          </configuration>
+        </plugin>
+        <plugin>
+        	<groupId>org.apache.maven.plugins</groupId>
+        	<artifactId>maven-jar-plugin</artifactId>
+        	<configuration>
+        		<archive>
+        			<manifestFile>${basedir}/src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+        			<manifest>
+        				<addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
+        				<addDefaultImplementationEntries>false</addDefaultImplementationEntries>
+        			</manifest>
+        		</archive>
+        	</configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
