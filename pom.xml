@@ -58,6 +58,19 @@
              <docencoding>UTF-8</docencoding>
           </configuration>
         </plugin>
+        <plugin>
+        	<groupId>org.apache.maven.plugins</groupId>
+        	<artifactId>maven-jar-plugin</artifactId>
+        	<configuration>
+        		<archive>
+        			<manifestFile>${basedir}/src/main/resources/META-INF/MANIFEST.MF</manifestFile>
+        			<manifest>
+        				<addDefaultSpecificationEntries>false</addDefaultSpecificationEntries>
+        				<addDefaultImplementationEntries>false</addDefaultImplementationEntries>
+        			</manifest>
+        		</archive>
+        	</configuration>
+        </plugin>
       </plugins>
     </pluginManagement>
   </build>
