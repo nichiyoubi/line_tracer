@@ -1,5 +1,4 @@
 Manifest-Version: 1.0
-Class-Path: /home/root/lejos/lib/ev3classes.jar /home/root/lejos/lib/d
- busjava.jar /home/root/lejos/libjna/usr/share/java/jna.jar
+Class-Path: /home/root/lejos/lib/ev3classes.jar /home/root/lejos/lib/dbusjava.jar /home/root/lejos/libjna/usr/share/java/jna.jar /home/lejos/programs/json-simple-1.1.1.jar
 Main-Class: jp.topse.line_tracer.LineTracer
 
