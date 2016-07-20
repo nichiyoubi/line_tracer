@@ -24,6 +24,7 @@ public interface LightSensor {
 	/**
 	 * トレースする経路（ライン）の有無を検出する閾値を取得する
 	 * 閾値は光センサー自身が自動検出できないためsetThreashold()で設定する
+	 * @return	コースの有無を判定する閾値の設定値（setThreasholdで設定した値）を返す
 	 */
 	float getThreashold();
 }
