@@ -7,6 +7,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.net.InetSocketAddress;
 import java.net.Socket;
+import org.json.simple.*;
 
 import lejos.hardware.lcd.LCD;
 import lejos.utility.Delay;
@@ -79,11 +80,13 @@ public class RemoteDataProvider implements Runnable {
 				float light = light_.getValue();
 				int right = rightWheel_.getSpeed();
 				int left = leftWheel_.getSpeed();
+				JSONObject json = new JSONObject();
 				
 				/// データを整形する
-				String output = "light, " + String.valueOf(light) + ", " +
-								"motor(right), " + String.valueOf(right) + ", " +
-								"motor(left), " + String.valueOf(left);
+				json.put("light", String.valueOf(light));
+				json.put("motor(rigth)", String.valueOf(right));
+				json.put("motor(left)", String.valueOf(left));
+				String output = json.toJSONString();
 				///　データを送信する
 				out.println(output);
 				out.flush();				
