@@ -4,9 +4,14 @@
 package jp.topse.line_tracer;
 
 import java.io.IOException;
-import java.io.PrintWriter;
-import java.net.InetSocketAddress;
+//import java.io.PrintWriter;
+import java.io.BufferedWriter;
+import java.io.OutputStreamWriter;
+import java.nio.charset.StandardCharsets;
+//import java.net.InetSocketAddress;
 import java.net.Socket;
+import java.net.URL;
+import java.net.HttpURLConnection;
 import org.json.simple.*;
 
 import lejos.hardware.lcd.LCD;
@@ -20,11 +25,11 @@ import jp.topse.line_tracer.Wheel;
  */
 public class RemoteDataProvider implements Runnable {
 	private Socket connSocket_ = null;
-	private final int PORT_ = 12346;
-	private final String ADDRESS_ = "192.168.11.3";
 	private LightSensor light_ = null;
 	private Wheel rightWheel_ = null;
 	private Wheel leftWheel_ = null;
+	private URL url_ = null;
+	private HttpURLConnection connection_ = null;
 	
 	/*
 	 * 
@@ -44,22 +49,24 @@ public class RemoteDataProvider implements Runnable {
 	 */
 	private boolean connect() {
 		try {
-			connSocket_ = new Socket();
-			connSocket_.connect(new InetSocketAddress(ADDRESS_, PORT_));
-			return true;
-		}
-		catch (IOException e1) {
+//			url_ = new URL("http://192.168.11.3:8080/");
+			url_ = new URL("http://model-check.appspot.com/");
 			try {
-				if (connSocket_ != null) {
-					connSocket_.close();
+				connection_ = (HttpURLConnection) url_.openConnection();
+				connection_.setDoOutput(true);
+				connection_.setRequestMethod("POST");
+				return true;
+			}
+			catch (IOException e) {
+				if (connection_ != null) {
+					connection_.disconnect();
 				}
 				return false;
 			}
-			catch (IOException e2) {
-				return false;
-			}
 		}
-
+		catch (IOException e) {
+			return false;
+		}
 	}
 	
 	/* (non-Javadoc)
@@ -75,7 +82,7 @@ public class RemoteDataProvider implements Runnable {
 		LCD.drawString("RDATA ", 0, 5);
 		
 		try {
-			PrintWriter out  = new PrintWriter(connSocket_.getOutputStream());
+			BufferedWriter writer = new BufferedWriter(new OutputStreamWriter(connection_.getOutputStream(), StandardCharsets.UTF_8));
 			while(true) {
 				float light = light_.getValue();
 				int right = rightWheel_.getSpeed();
@@ -86,14 +93,19 @@ public class RemoteDataProvider implements Runnable {
 				json.put("light", String.valueOf(light));
 				json.put("motor(rigth)", String.valueOf(right));
 				json.put("motor(left)", String.valueOf(left));
-				String output = json.toJSONString();
 				///　データを送信する
-				out.println(output);
-				out.flush();				
+				writer.write(json.toJSONString());
+				writer.flush();
+				if (connection_.getResponseCode() != HttpURLConnection.HTTP_OK) {
+					LCD.drawString("ERROR2", 0, 5);
+					break;
+				}
 				Delay.msDelay(1000);
+				LCD.drawString("RDATA " + (cnt++), 0, 5);
 			}
 		}
 		catch(IOException e1) {
+			LCD.drawString("ERROR1", 0, 5);
 			try {
 				if (connSocket_ != null) {
 					connSocket_.close();
