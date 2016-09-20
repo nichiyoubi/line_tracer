@@ -1,0 +1,20 @@
+/**
+ * 
+ */
+package jp.topse.taxi;
+
+/**
+ * @author usamimasanori
+ *
+ */
+public class Taxi {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}
