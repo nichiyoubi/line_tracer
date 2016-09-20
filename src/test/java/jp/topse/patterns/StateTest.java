@@ -3,11 +3,20 @@
  */
 package jp.topse.patterns;
 
-//import static org.junit.Assert.*;
+import static org.junit.Assert.*;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import jp.topse.taxi.*;
+
+import jp.topse.taxi.StateDrivingMode;
+import jp.topse.taxi.StateGettingOff;
+import jp.topse.taxi.StateGettingOn;
+import jp.topse.taxi.StatePicking;
+import jp.topse.taxi.StateReturning;
+import jp.topse.taxi.StateSafetyMode;
+import jp.topse.taxi.StateTaking;
+import jp.topse.taxi.StateWaiting;
 
 /**
  * @author usamimasanori
@@ -47,8 +56,9 @@ public class StateTest {
 		context_.action();
 		state = context_.getState();
 		assert(state instanceof ConcreteStateA);		
+//		fail("Not yet implemented"); // TODO
 	}
-	
+
 	@Test
 	public void testAction2() {
 		context_.setState(StateWaiting.getInstance());
@@ -85,5 +95,4 @@ public class StateTest {
 		assert(context_.getState() instanceof StateDrivingMode);		
 		
 	}
-
 }
