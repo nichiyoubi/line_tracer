@@ -12,6 +12,7 @@ install:
 script:
  - mvn compile
  - mvn javadoc:javadoc
+ - mvn test
 
 after_script:
 
