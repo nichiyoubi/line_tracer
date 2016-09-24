@@ -9,6 +9,6 @@ import jp.topse.patterns.State;
  * @author usamimasanori
  *
  */
-public class StateDriving extends State {
-
+public abstract class StateDriving extends State {
+	
 }
