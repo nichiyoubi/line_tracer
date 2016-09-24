@@ -56,7 +56,6 @@ public class StateTest {
 		context_.action();
 		state = context_.getState();
 		assert(state instanceof ConcreteStateA);		
-//		fail("Not yet implemented"); // TODO
 	}
 
 	@Test
