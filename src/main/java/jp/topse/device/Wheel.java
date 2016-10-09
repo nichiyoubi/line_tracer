@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.device;
 
 /**
  * 車輪インターフェース

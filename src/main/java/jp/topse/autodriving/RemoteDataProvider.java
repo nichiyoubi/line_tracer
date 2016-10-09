@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.autodriving;
 
 import java.io.IOException;
 //import java.io.PrintWriter;
@@ -14,10 +14,10 @@ import java.net.URL;
 import java.net.HttpURLConnection;
 import org.json.simple.*;
 
+import jp.topse.device.LightSensor;
+import jp.topse.device.Wheel;
 import lejos.hardware.lcd.LCD;
 import lejos.utility.Delay;
-import jp.topse.line_tracer.LightSensor;
-import jp.topse.line_tracer.Wheel;
 
 /**
  * @author usamimasanori

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.device;
 
 import lejos.hardware.port.Port;
 import lejos.hardware.sensor.EV3ColorSensor;

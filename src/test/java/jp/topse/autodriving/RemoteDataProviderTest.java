@@ -1,13 +1,17 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.autodriving;
 
-import static org.junit.Assert.*;
+// import static org.junit.Assert.*;
 
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+
+import jp.topse.autodriving.RemoteDataProvider;
+import jp.topse.device.MockLightSensor;
+import jp.topse.device.MockWheel;
 
 /**
  * @author usamimasanori
@@ -42,7 +46,7 @@ public class RemoteDataProviderTest {
 	}
 
 	/**
-	 * Test method for {@link jp.topse.line_tracer.RemoteDataProvider#json2str()}.
+	 * Test method for {@link jp.topse.autodriving.RemoteDataProvider#json2str()}.
 	 */
 	@Test
 	public void testJson2str() {

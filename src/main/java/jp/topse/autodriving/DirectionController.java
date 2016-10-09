@@ -1,9 +1,9 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.autodriving;
 
-import jp.topse.line_tracer.Wheel;
+import jp.topse.device.Wheel;
 
 /**
  * @author usamimasanori
@@ -15,22 +15,22 @@ public abstract class DirectionController {
 	 * @param right 右の車輪
 	 * @param left 左の写真
 	 */
-	abstract void setWheel(Wheel right, Wheel left);
+	public abstract void setWheel(Wheel right, Wheel left);
 	
 	/**
 	 * 進行方向を設定する
 	 * @param direction 進行方向（-100：左~100：右）
 	 */
-	abstract void setDirection(int direction);
+	public abstract void setDirection(int direction);
 	
 	/**
 	 * 現在の進行方向を戻り値として返す
 	 * @return 現在の進行方向（-100：左〜100：右）
 	 */
-	abstract int getDirection();
+	public abstract int getDirection();
 	
 	/**
 	 * 
 	 */
-	abstract void stop();
+	public abstract void stop();
 }

@@ -1,7 +1,7 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.autodriving;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,8 +12,6 @@ import java.net.Socket;
 
 import lejos.hardware.lcd.LCD;
 import lejos.utility.Delay;
-import jp.topse.line_tracer.DirectionController;
-import jp.topse.line_tracer.Command;
 
 /**
  * @author usamimasanori

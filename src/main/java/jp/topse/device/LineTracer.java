@@ -1,8 +1,16 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.device;
 
+import jp.topse.autodriving.Controller;
+import jp.topse.autodriving.ControllerOnOff;
+import jp.topse.autodriving.DirectionController;
+import jp.topse.autodriving.DirectionControllerImpl;
+import jp.topse.autodriving.RemoteController;
+import jp.topse.autodriving.RemoteDataProvider;
+import jp.topse.device.LightSensorImpl;
+import jp.topse.device.WheelImpl;
 import lejos.hardware.BrickFinder;
 import lejos.hardware.Key;
 import lejos.hardware.ev3.EV3;
@@ -10,12 +18,6 @@ import lejos.hardware.lcd.LCD;
 import lejos.hardware.port.MotorPort;
 import lejos.hardware.port.SensorPort;
 import lejos.utility.Delay;
-import jp.topse.line_tracer.ControllerOnOff;
-import jp.topse.line_tracer.DirectionControllerImpl;
-import jp.topse.line_tracer.LightSensorImpl;
-import jp.topse.line_tracer.RemoteController;
-import jp.topse.line_tracer.RemoteDataProvider;
-import jp.topse.line_tracer.WheelImpl;
 
 /**
  * @author usamimasanori

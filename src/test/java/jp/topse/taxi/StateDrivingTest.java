@@ -8,7 +8,8 @@ import static org.junit.Assert.*;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import jp.topse.line_tracer.*;
+
+import jp.topse.autodriving.MockController;
 
 /**
  * @author usamimasanori
@@ -32,7 +33,7 @@ public class StateDrivingTest {
 	}
 
 	/**
-	 * Test method for {@link jp.topse.taxi.StateDriving#setController(jp.topse.line_tracer.Controller)}.
+	 * Test method for {@link jp.topse.taxi.StateDriving#setController(jp.topse.device.Controller)}.
 	 */
 	@Test
 	public void testSetController() {

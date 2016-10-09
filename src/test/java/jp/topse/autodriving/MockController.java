@@ -1,7 +1,11 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.autodriving;
+
+import jp.topse.autodriving.Controller;
+import jp.topse.autodriving.DirectionController;
+import jp.topse.device.LightSensor;
 
 /**
  * @author usamimasanori
@@ -10,30 +14,37 @@ package jp.topse.line_tracer;
 public class MockController extends Controller {
 
 	/* (non-Javadoc)
-	 * @see jp.topse.line_tracer.Controller#setLightSensor(jp.topse.line_tracer.LightSensor)
+	 * @see jp.topse.autodriving.Controller#setLightSensor(jp.topse.line_tracer.LightSensor)
 	 */
 	@Override
-	void setLightSensor(LightSensor light) {
+	public void setLightSensor(LightSensor light) {
 		// TODO Auto-generated method stub
 
 	}
 
 	/* (non-Javadoc)
-	 * @see jp.topse.line_tracer.Controller#setDirectionController(jp.topse.line_tracer.DirectionController)
+	 * @see jp.topse.autodriving.Controller#setDirectionController(jp.topse.line_tracer.DirectionController)
 	 */
 	@Override
-	void setDirectionController(DirectionController direction) {
+	public void setDirectionController(DirectionController direction) {
 		// TODO Auto-generated method stub
 
 	}
 
 	/* (non-Javadoc)
-	 * @see jp.topse.line_tracer.Controller#execute()
+	 * @see jp.topse.autodriving.Controller#execute()
 	 */
 	@Override
-	boolean execute() {
+	public void execute() {
 		// TODO Auto-generated method stub
-		return false;
+	}
+
+	/* (non-Javadoc)
+	 * @see jp.topse.autodriving.Controller#execute()
+	 */
+	@Override
+	public void stop() {
+		
 	}
 
 }

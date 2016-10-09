@@ -1,7 +1,9 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.device;
+
+import jp.topse.device.Wheel;
 
 /**
  * @author usamimasanori

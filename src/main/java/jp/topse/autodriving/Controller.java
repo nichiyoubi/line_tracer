@@ -1,10 +1,10 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.autodriving;
 
-import jp.topse.line_tracer.DirectionController;
-import jp.topse.line_tracer.LightSensor;
+import jp.topse.autodriving.DirectionController;
+import jp.topse.device.LightSensor;
 
 /**
  * @author usamimasanori
@@ -15,17 +15,22 @@ public abstract class Controller {
 	 * 
 	 * @param light
 	 */
-	abstract void setLightSensor(LightSensor light);
+	public abstract void setLightSensor(LightSensor light);
 	
 	/**
 	 * 
 	 * @param direction
 	 */
-	abstract void setDirectionController(DirectionController direction);
+	public abstract void setDirectionController(DirectionController direction);
 	
 	/**
 	 * 
 	 * @return
 	 */
-	abstract boolean execute();
+	public abstract void execute();
+	
+	/**
+	 * 
+	 */
+	public abstract void stop();
 }

@@ -3,8 +3,8 @@
  */
 package jp.topse.taxi;
 
+import jp.topse.autodriving.Controller;
 import jp.topse.patterns.State;
-import jp.topse.line_tracer.*;
 
 /**
  * @author usamimasanori

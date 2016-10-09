@@ -1,9 +1,9 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.autodriving;
 
-import jp.topse.line_tracer.Wheel;
+import jp.topse.device.Wheel;
 
 /**
  * @author usamimasanori
@@ -31,7 +31,7 @@ public class DirectionControllerImpl extends DirectionController {
 	 * @see jp.topse.line_tracer.DirectionController#setWheel(jp.topse.line_tracer.Wheel, jp.topse.line_tracer.Wheel)
 	 */
 	@Override
-	void setWheel(Wheel right, Wheel left) {
+	public void setWheel(Wheel right, Wheel left) {
 		rightWheel_ = right;
 		leftWheel_ = left;
 	}
@@ -42,7 +42,7 @@ public class DirectionControllerImpl extends DirectionController {
 	 * @see jp.topse.line_tracer.DirectionController#setDirection(int)
 	 */
 	@Override
-	void setDirection(int direction) {
+	public void setDirection(int direction) {
 		if ((direction < -100) | (direction > 100)) {
 			return;
 		}
@@ -70,7 +70,7 @@ public class DirectionControllerImpl extends DirectionController {
 	 * @see jp.topse.line_tracer.DirectionController#getDirection()
 	 */
 	@Override
-	int getDirection() {
+	public int getDirection() {
 		return direction_;
 	}
 
@@ -79,7 +79,7 @@ public class DirectionControllerImpl extends DirectionController {
 	 * @see jp.topse.line_tracer.DirectionController#stop()
 	 */
 	@Override
-	void stop() {
+	public void stop() {
 		rightWheel_.stop();
 		leftWheel_.stop();
 	}

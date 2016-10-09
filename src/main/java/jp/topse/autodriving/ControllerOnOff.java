@@ -1,10 +1,10 @@
 /**
  * 
  */
-package jp.topse.line_tracer;
+package jp.topse.autodriving;
 
-import jp.topse.line_tracer.DirectionController;
-import jp.topse.line_tracer.LightSensor;
+import jp.topse.autodriving.DirectionController;
+import jp.topse.device.LightSensor;
 
 /**
  * @author usamimasanori
@@ -28,7 +28,7 @@ public class ControllerOnOff extends Controller {
 	 * @see jp.topse.line_tracer.Controller#setLightSensor(jp.topse.line_tracer.LightSensor)
 	 */
 	@Override
-	void setLightSensor(LightSensor light) {
+	public void setLightSensor(LightSensor light) {
 		light_ = light;
 	}
 
@@ -36,7 +36,7 @@ public class ControllerOnOff extends Controller {
 	 * @see jp.topse.line_tracer.Controller#setDirectionController(jp.topse.line_tracer.DirectionController)
 	 */
 	@Override
-	void setDirectionController(DirectionController direction) {
+	public void setDirectionController(DirectionController direction) {
 		direction_ = direction;
 	}
 
@@ -44,7 +44,7 @@ public class ControllerOnOff extends Controller {
 	 * @see jp.topse.line_tracer.Controller#execute()
 	 */
 	@Override
-	boolean execute() {
+	public void execute() {
 		float value = light_.getValue();
 		if (light_.getThreashold() > value) {
 			direction_.setDirection(+100);
@@ -55,7 +55,11 @@ public class ControllerOnOff extends Controller {
 		else {
 			direction_.setDirection(0);
 		}
-		return true;
+	}
+	
+	@Override
+	public void stop() {
+		direction_.stop();
 	}
 
 }

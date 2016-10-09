@@ -1,4 +1,4 @@
-package jp.topse.line_tracer;
+
 
 import junit.framework.Test;
 import junit.framework.TestCase;
