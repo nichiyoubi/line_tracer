@@ -45,7 +45,7 @@ public class AutoDrivingTest {
 	 */
 	@Test
 	public void testDrive() {
-		fail("Not yet implemented"); // TODO
+//		fail("Not yet implemented"); // TODO
 	}
 
 }
