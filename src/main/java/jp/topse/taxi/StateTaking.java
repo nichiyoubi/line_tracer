@@ -4,6 +4,7 @@
 package jp.topse.taxi;
 
 import jp.topse.patterns.StateContext;
+import jp.topse.autodriving.AutoDriving;
 
 /**
  * @author usamimasanori
