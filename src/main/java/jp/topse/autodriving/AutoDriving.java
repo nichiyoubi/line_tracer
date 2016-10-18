@@ -15,7 +15,7 @@ public class AutoDriving {
 		
 	}
 	
-	static AutoDriving getInstance() {
+	public static AutoDriving getInstance() {
 		return instance_;
 	}
 	
