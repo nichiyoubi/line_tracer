@@ -23,6 +23,9 @@ public class StateDrivingMode extends State {
 	}
 	
 	public void action(StateContext context) {
+		if (driver_ != null) {
+			driver_.drive();
+		}
 		context.setState(StateSafetyMode.getInstance());
 	}
 	
