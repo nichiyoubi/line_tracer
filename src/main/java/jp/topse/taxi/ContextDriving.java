@@ -19,4 +19,9 @@ public class ContextDriving extends StateContext {
 	public static ContextDriving getInstance() {
 		return instane_;
 	}
+	
+	@Override
+	public void action() {
+		super.action();
+	}
 }
